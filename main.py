@@ -84,4 +84,5 @@ class App:
 if __name__ == "__main__":
     root = tk.Tk()
     app = App(root)
+    root.title("This is the name of the window") # change this to proper name when you think of one.
     root.mainloop()
