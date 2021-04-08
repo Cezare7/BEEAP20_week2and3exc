@@ -12,7 +12,7 @@ from matplotlib.figure import Figure
 class App:
     def __init__(self, root):
         # setting title
-        root.title("undefined")
+        root.title("This is the name of the window") # change this to proper name when you think of one.
         # setting window size
         width = 600
         height = 500
@@ -29,10 +29,9 @@ class App:
         self.__GButton_450["font"] = ft
         self.__GButton_450["fg"] = "#000000"
         self.__GButton_450["justify"] = "center"
-        self.__GButton_450["text"] = "Button"
-        self.__GButton_450.place(x=70, y=50, width=70, height=25)
+        self.__GButton_450["text"] = "Open CSV file" # this is the button name change it to a propper if needed
+        self.__GButton_450.place(x=70, y=50, width=90, height=25)
         self.__GButton_450["command"] = self.__GButton_450_command
-
         self.__GListBox_563 = ttk.Combobox(root)
         self.__GListBox_563.place(x=350, y=50, width=80, height=25)
         self.__GListBox_563.bind("<<ComboboxSelected>>", self.__comboBoxCb)
@@ -43,7 +42,7 @@ class App:
         self.__GLabel_544["fg"] = "#333333"
         self.__GLabel_544["justify"] = "center"
         self.__GLabel_544["text"] = "label"
-        self.__GLabel_544.place(x=150, y=50, width=70, height=25)
+        self.__GLabel_544.place(x=170, y=50, width=70, height=25)
 
         # these canvases are broken, fix them
         self.__GLineEdit_517 = tk.Canvas(root)
@@ -84,5 +83,4 @@ class App:
 if __name__ == "__main__":
     root = tk.Tk()
     app = App(root)
-    root.title("This is the name of the window") # change this to proper name when you think of one.
     root.mainloop()
