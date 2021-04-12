@@ -4,6 +4,7 @@ import numpy as np
 import tkinter as tk
 from tkinter import ttk
 from tkinter import filedialog as fd
+import tkinter.messagebox as tkBox
 import tkinter.font as tkFont
 
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
@@ -63,11 +64,12 @@ class App:
         try:
             self.__df = pd.read_csv(filePath)
             self.__df = self.__df.dropna()
-            self.__GListBox_563['values'] = list(self.__df['COMMUNITY AREA NAME'].unique())
+            self.__ComboBox_01['values'] = list(self.__df['COMMUNITY AREA NAME'].unique())
         except:
             # quick and dirty, desired behavior would be to show a notification pop up that says
             # "nope!"
-            print('nope')
+            tkBox.showinfo('This is an ugly Error!', 'Not that one, choose another')
+            #print('nope')
 
     # desired behavior: select one area, show 4 plots drawn on 4 canvases of that area: 
     # top left: bar chart, average KWH by month
