@@ -40,12 +40,12 @@ class App:
         self.ComboBox_01.bind("<<ComboboxSelected>>", self.__comboBoxCb)
 
         self.__GLabel_544 = tk.Label(root)
-        ft = tkFont.Font(family='Times', size=10)
+        ft = tkFont.Font(family='Times', size=11)
         self.__GLabel_544["font"] = ft
         self.__GLabel_544["fg"] = "#333333"
         self.__GLabel_544["justify"] = "center"
-        self.__GLabel_544["text"] = "label"
-        self.__GLabel_544.place(x=170, y=50, width=70, height=25)
+        self.__GLabel_544["text"] = "Please select a community:"
+        self.__GLabel_544.place(x=170, y=50, width=170, height=25)
 
         # these canvases are broken, fix them
         self.__GLineEdit_517 = tk.Canvas(root,bg='blue')
