@@ -1,0 +1,65 @@
+[33mcommit dbb5fc921ac4766a623cabafeac3b608b4df7d4c[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Benjamin Democh <benjamin.democh@student.hamk.fi>
+Date:   Mon Apr 12 20:26:14 2021 +0300
+
+    fixed variables to correct mistake in button_01-command function
+
+[33mcommit a3dc50d8e621a87afd9dde21de86018e76653da9[m
+Author: Benjamin Democh <benjamin.democh@student.hamk.fi>
+Date:   Mon Apr 12 14:16:58 2021 +0300
+
+    renamed the title
+
+[33mcommit b4362aa7438c4239d9dd648687eac2532f77e384[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Benjamin Democh <benjamin.democh@student.hamk.fi>
+Date:   Mon Apr 12 14:12:07 2021 +0300
+
+    added pop up message to Button_01 when wrong file is selected
+
+[33mcommit 29b6447fa1292020fb183f375b3b500bce8a478b[m
+Author: Benjamin Democh <benjamin.democh@student.hamk.fi>
+Date:   Mon Apr 12 13:56:30 2021 +0300
+
+    Changed names of variables
+
+[33mcommit 312fe4f19262614ab235c418b8c311322135aeeb[m
+Author: Benjamin Democh <benjamin.democh@student.hamk.fi>
+Date:   Mon Apr 12 13:44:10 2021 +0300
+
+     Added lable to Combobox, changed width
+
+[33mcommit e490d9f687012f3d580682adcf2140d2f0097ea5[m
+Author: Benjamin Democh <benjamin.democh@student.hamk.fi>
+Date:   Thu Apr 8 20:15:57 2021 +0300
+
+    moved frame title, changed name/propertis of Button, moved lable loaction slightly
+
+[33mcommit 2ed2c9b72805e18f7a53b9330c2e2881f6a15ca6[m
+Author: Benjamin Democh <benjamin.democh@student.hamk.fi>
+Date:   Thu Apr 8 20:06:33 2021 +0300
+
+    added window name
+
+[33mcommit 7a9ce1f26a5a90c5fa107d12618eef1b5959448f[m
+Author: Khoa Dang <khoa.dang@hamk.fi>
+Date:   Thu Apr 8 09:00:03 2021 +0300
+
+    basecode done
+
+[33mcommit 49b76d652bc1688a7a6dc31177f9a2ded93d7577[m
+Author: Khoa Dang <khoa.dang@hamk.fi>
+Date:   Thu Apr 8 08:57:38 2021 +0300
+
+    basecode done
+
+[33mcommit 3dfdb60f9589c18d9a172894d809be6482672758[m
+Author: Khoa Dang <khoa.dang@hamk.fi>
+Date:   Wed Apr 7 16:46:39 2021 +0300
+
+    code example for file dialog
+
+[33mcommit 99d70430f98f628561e2637453ec31c064bc7bd7[m
+Author: Khoa Dang <khoa.dang@hamk.fi>
+Date:   Wed Apr 7 16:43:49 2021 +0300
+
+    initial commit with example simple code
