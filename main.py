@@ -23,19 +23,19 @@ class App:
         root.geometry(alignstr)
         root.resizable(width=False, height=False)
 
-        self.__GButton_450 = tk.Button(root)
-        self.__GButton_450["bg"] = "#efefef"
+        self.Button_01= tk.Button(root)
+        self.Button_01["bg"] = "#efefef"
         ft = tkFont.Font(family='Times', size=10)
-        self.__GButton_450["font"] = ft
-        self.__GButton_450["fg"] = "#000000"
-        self.__GButton_450["justify"] = "center"
-        self.__GButton_450["text"] = "Open CSV file" # this is the button name change it to a propper if needed
-        self.__GButton_450.place(x=70, y=50, width=90, height=25)
-        self.__GButton_450["command"] = self.__GButton_450_command
-        self.__GListBox_563 = ttk.Combobox(root)
-        self.__GListBox_563.set("Select community")
-        self.__GListBox_563.place(x=350, y=50, width=120, height=25)
-        self.__GListBox_563.bind("<<ComboboxSelected>>", self.__comboBoxCb)
+        self.Button_01["font"] = ft
+        self.Button_01["fg"] = "#000000"
+        self.Button_01["justify"] = "center"
+        self.Button_01["text"] = "Open CSV file" # this is the button name change it to a propper if needed
+        self.Button_01.place(x=70, y=50, width=90, height=25)
+        self.Button_01["command"] = self.Button_01_command
+        self.ComboBox_01 = ttk.Combobox(root)
+        self.ComboBox_01.set("Select community")
+        self.ComboBox_01.place(x=350, y=50, width=120, height=25)
+        self.ComboBox_01.bind("<<ComboboxSelected>>", self.__comboBoxCb)
 
         self.__GLabel_544 = tk.Label(root)
         ft = tkFont.Font(family='Times', size=10)
@@ -58,7 +58,7 @@ class App:
         self.__GLineEdit_700 = tk.Canvas(root)
         self.__GLineEdit_700.place(x=310, y=290, width=234, height=158)
 
-    def __GButton_450_command(self):
+    def Button_01_command(self):
         filePath = fd.askopenfilename(initialdir='.')
         try:
             self.__df = pd.read_csv(filePath)
