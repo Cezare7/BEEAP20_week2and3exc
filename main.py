@@ -10,6 +10,7 @@ import tkinter.font as tkFont
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
 from matplotlib.figure import Figure
 
+
 class App:
     def __init__(self, root):
         # setting title
@@ -64,7 +65,7 @@ class App:
         try:
             self.__df = pd.read_csv(filePath)
             self.__df = self.__df.dropna()
-            self.__ComboBox_01['values'] = list(self.__df['COMMUNITY AREA NAME'].unique())
+            self.ComboBox_01['values'] = list(self.__df['COMMUNITY AREA NAME'].unique())
         except:
             # quick and dirty, desired behavior would be to show a notification pop up that says
             # "nope!"
