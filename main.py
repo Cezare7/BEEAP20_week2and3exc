@@ -13,7 +13,7 @@ from matplotlib.figure import Figure
 class App:
     def __init__(self, root):
         # setting title
-        root.title("This is the name of the window") # change this to proper name when you think of one.
+        root.title("Energy Usage 2010") # change this to proper name when you think of one.
         # setting window size
         width = 600
         height = 500
