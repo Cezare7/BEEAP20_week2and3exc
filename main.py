@@ -33,7 +33,8 @@ class App:
         self.__GButton_450.place(x=70, y=50, width=90, height=25)
         self.__GButton_450["command"] = self.__GButton_450_command
         self.__GListBox_563 = ttk.Combobox(root)
-        self.__GListBox_563.place(x=350, y=50, width=80, height=25)
+        self.__GListBox_563.set("Select community")
+        self.__GListBox_563.place(x=350, y=50, width=120, height=25)
         self.__GListBox_563.bind("<<ComboboxSelected>>", self.__comboBoxCb)
 
         self.__GLabel_544 = tk.Label(root)
