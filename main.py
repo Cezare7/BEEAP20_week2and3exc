@@ -39,13 +39,13 @@ class App:
         self.ComboBox_01.place(x=350, y=50, width=120, height=25)
         self.ComboBox_01.bind("<<ComboboxSelected>>", self.__comboBoxCb)
 
-        self.__GLabel_544 = tk.Label(root)
+        self.Lable_01 = tk.Label(root)
         ft = tkFont.Font(family='Times', size=11)
-        self.__GLabel_544["font"] = ft
-        self.__GLabel_544["fg"] = "#333333"
-        self.__GLabel_544["justify"] = "center"
-        self.__GLabel_544["text"] = "Please select a community:"
-        self.__GLabel_544.place(x=170, y=50, width=170, height=25)
+        self.Lable_01["font"] = ft
+        self.Lable_01["fg"] = "#333333"
+        self.Lable_01["justify"] = "center"
+        self.Lable_01["text"] = "Please select a community:"
+        self.Lable_01.place(x=170, y=50, width=170, height=25)
 
         # these canvases are broken, fix them
         self.__GLineEdit_517 = tk.Canvas(root,bg='blue')
@@ -77,7 +77,7 @@ class App:
     # top right: bar chart, average THERM by month
     # bottom left and bottom right up to you
     def __comboBoxCb(self, event=None):
-        self.__subdf = self.__df.loc[self.__df['COMMUNITY AREA NAME'] == self.__GListBox_563.get()]
+        self.__subdf = self.__df.loc[self.__df['COMMUNITY AREA NAME'] == self.ComboBox_01.get()]
         print(self.__subdf.head())
         fig1 = Figure(figsize=(self.__GLineEdit_392.winfo_width, self.__GLineEdit_392.winfo_height), dpi=100)
         ax1 = fig1.add_subplot(111)
