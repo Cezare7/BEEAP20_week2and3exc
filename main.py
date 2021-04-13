@@ -20,32 +20,31 @@ class App:
         height = 500
         screenwidth = root.winfo_screenwidth()
         screenheight = root.winfo_screenheight()
-        alignstr = '%dx%d+%d+%d' % (width, height,
-                                    (screenwidth - width) / 2, (screenheight - height) / 2)
+        alignstr = '%dx%d+%d+%d' % (width, height,(screenwidth - width) / 2, (screenheight - height) / 2)
         root.geometry(alignstr)
         root.resizable(width=False, height=False)
 
-        self.Button_01= tk.Button(root)
-        self.Button_01["bg"] = "#efefef"
+        self.__Button_01= tk.Button(root)
+        self.__Button_01["bg"] = "#efefef"
         ft = tkFont.Font(family='Times', size=10)
-        self.Button_01["font"] = ft
-        self.Button_01["fg"] = "#000000"
-        self.Button_01["justify"] = "center"
-        self.Button_01["text"] = "Open CSV file" # this is the button name change it to a propper if needed
-        self.Button_01.place(x=70, y=50, width=90, height=25)
-        self.Button_01["command"] = self.Button_01_command
-        self.ComboBox_01 = ttk.Combobox(root)
-        self.ComboBox_01.set("Select community")
-        self.ComboBox_01.place(x=350, y=50, width=120, height=25)
-        self.ComboBox_01.bind("<<ComboboxSelected>>", self.__comboBoxCb)
+        self.__Button_01["font"] = ft
+        self.__Button_01["fg"] = "#000000"
+        self.__Button_01["justify"] = "center"
+        self.__Button_01["text"] = "Open CSV file" # this is the button name change it to a propper if needed
+        self.__Button_01.place(x=70, y=50, width=90, height=25)
+        self.__Button_01["command"] = self.Button_01_command
+        self.__ComboBox_01 = ttk.Combobox(root)
+        self.__ComboBox_01.set("Select community")
+        self.__ComboBox_01.place(x=350, y=50, width=120, height=25)
+        self.__ComboBox_01.bind("<<ComboboxSelected>>", self.__comboBoxCb)
 
-        self.Lable_01 = tk.Label(root)
+        self.__Lable_01 = tk.Label(root)
         ft = tkFont.Font(family='Times', size=11)
-        self.Lable_01["font"] = ft
-        self.Lable_01["fg"] = "#333333"
-        self.Lable_01["justify"] = "center"
-        self.Lable_01["text"] = "Please select a community:"
-        self.Lable_01.place(x=170, y=50, width=170, height=25)
+        self.__Lable_01["font"] = ft
+        self.__Lable_01["fg"] = "#333333"
+        self.__Lable_01["justify"] = "center"
+        self.__Lable_01["text"] = "Please select a community:"
+        self.__Lable_01.place(x=170, y=50, width=170, height=25)
 
         # these canvases are broken, fix them
         self.__GLineEdit_517 = tk.Canvas(root,bg='blue')
@@ -65,7 +64,7 @@ class App:
         try:
             self.__df = pd.read_csv(filePath)
             self.__df = self.__df.dropna()
-            self.ComboBox_01['values'] = list(self.__df['COMMUNITY AREA NAME'].unique())
+            self.__ComboBox_01['values'] = list(self.__df['COMMUNITY AREA NAME'].unique())
         except:
             # quick and dirty, desired behavior would be to show a notification pop up that says
             # "nope!"
@@ -77,11 +76,12 @@ class App:
     # top right: bar chart, average THERM by month
     # bottom left and bottom right up to you
     def __comboBoxCb(self, event=None):
-        self.__subdf = self.__df.loc[self.__df['COMMUNITY AREA NAME'] == self.ComboBox_01.get()]
+        self.__subdf = self.__df.loc[self.__df['COMMUNITY AREA NAME'] == self.__ComboBox_01.get()]
         print(self.__subdf.head())
         fig1 = Figure(figsize=(self.__GLineEdit_392.winfo_width, self.__GLineEdit_392.winfo_height), dpi=100)
         ax1 = fig1.add_subplot(111)
         self.__subdf.iloc[:, range(self.__subdf.columns.get_loc['KWH JANUARY 2010'], 12)].mean().plot.bar(ax=ax1)
+      
 
 
 if __name__ == "__main__":
