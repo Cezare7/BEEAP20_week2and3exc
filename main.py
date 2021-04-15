@@ -86,8 +86,17 @@ class App:
         kwhJanIdx = (self.__subdf.columns.get_loc('KWH JANUARY 2010'))
         print(kwhJanIdx)
         df1 = self.__subdf.iloc[:, range(kwhJanIdx, kwhJanIdx+12)].mean().plot.bar(ax=ax1)
-        #df1 = self.__subdf.iloc[:, range(self.__subdf.columns.get_loc('KWH JANUARY 2010'), 1)].mean().plot.bar(ax=ax1)
         ax1.set_title('KWH mean')
+        
+        figure1 = plt.figure(dpi=50)
+        ax1 = figure1.add_subplot(111)
+        bar1 = FigureCanvasTkAgg(figure1, root)
+        bar1.get_tk_widget().place(x=310, y=130, width=250, height=155)
+        kwhJanIdx = (self.__subdf.columns.get_loc('THERM JANUARY 2010'))
+        print(kwhJanIdx)
+        df1 = self.__subdf.iloc[:, range(kwhJanIdx, kwhJanIdx+12)].mean().plot.bar(ax=ax1)
+        ax1.set_title('KWH mean')
+       
 
 if __name__ == "__main__":
     root = tk.Tk()
