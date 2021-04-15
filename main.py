@@ -77,14 +77,16 @@ class App:
     # bottom left and bottom right up to you
     def __comboBoxCb(self, event=None):
         self.__subdf = self.__df.loc[self.__df['COMMUNITY AREA NAME'] == self.__ComboBox_01.get()]
-        print(self.__subdf.head())
+        print(self.__subdf.columns.get_loc('KWH AUGUST 2010'))
         
-        figure1 = plt.figure(dpi=100)
+        figure1 = plt.figure(dpi=50)
         ax1 = figure1.add_subplot(111)
         bar1 = FigureCanvasTkAgg(figure1, root)
         bar1.get_tk_widget().place(x=50, y=130, width=250, height=155)
-        df1 = self.__subdf.iloc[:, range(self.__subdf.columns.get_loc('KWH JANUARY 2010'), 12)].mean().plot.bar(ax=ax1)
-        # df1 = self.__subdf.iloc[:, range(self.__subdf.columns.get_loc('THERM JANUARY 2010'), 12)].mean().plot.bar(ax=ax1)
+        kwhJanIdx = (self.__subdf.columns.get_loc('KWH JANUARY 2010'))
+        print(kwhJanIdx)
+        df1 = self.__subdf.iloc[:, range(kwhJanIdx, kwhJanIdx+12)].mean().plot.bar(ax=ax1)
+        #df1 = self.__subdf.iloc[:, range(self.__subdf.columns.get_loc('KWH JANUARY 2010'), 1)].mean().plot.bar(ax=ax1)
         ax1.set_title('KWH mean')
 
 if __name__ == "__main__":
