@@ -1,6 +1,5 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-import numpy as np
 import tkinter as tk
 from tkinter import ttk
 from tkinter import filedialog as fd
@@ -47,16 +46,16 @@ class App:
         self.__Lable_01.place(x=170, y=50, width=170, height=25)
 
         # these canvases are broken, fix them
-        self.__GLineEdit_517 = tk.Canvas(root, bg='blue')
+        self.__GLineEdit_517 = tk.Canvas(root)
         self.__GLineEdit_517.place(x=50, y=130, width=250, height=155)
 
-        self.__GLineEdit_985 = tk.Canvas(root, bg='red')
+        self.__GLineEdit_985 = tk.Canvas(root)
         self.__GLineEdit_985.place(x=310, y=130, width=250, height=155)
 
-        self.__GLineEdit_392 = tk.Canvas(root, bg='yellow')
+        self.__GLineEdit_392 = tk.Canvas(root)
         self.__GLineEdit_392.place(x=50, y=295, width=250, height=155)
 
-        self.__GLineEdit_700 = tk.Canvas(root, bg='green')
+        self.__GLineEdit_700 = tk.Canvas(root)
         self.__GLineEdit_700.place(x=310, y=295, width=250, height=155)
 
     def Button_01_command(self):
