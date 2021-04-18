@@ -6,7 +6,6 @@ from tkinter import filedialog as fd
 import tkinter.messagebox as tkBox
 import tkinter.font as tkFont
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
-from testing import *
 
 
 # %% Class App
@@ -36,7 +35,7 @@ class App:
         self.__ComboBox_01 = ttk.Combobox(root)
         self.__ComboBox_01.set("Select community")
         self.__ComboBox_01.place(x=350, y=50, width=120, height=25)
-        self.__ComboBox_01.bind("<<ComboboxSelected>>", self.testing)
+        self.__ComboBox_01.bind("<<ComboboxSelected>>", self.__comboBoxCb)
 
         self.__Lable_01 = tk.Label(root)
         ft = tkFont.Font(family='Times', size=11)
@@ -56,13 +55,13 @@ class App:
             self.__df = self.__df.dropna()
             self.__ComboBox_01['values'] = list(self.__df['COMMUNITY AREA'
                                                           ' NAME'].unique())
-        except: #Exeption to E722 when printing out
+        except filePath.DoesNotExist:
             tkBox.showinfo('This is an ugly Error!',
                            'Not that one, choose another')
 
 # %% Combobox
 
-    def testing(self, event=None):
+    def __comboBoxCb(self, event=None):
         self.__subdf = self.__df.loc[self.__df['COMMUNITY AREA NAME'
                                                ''] == self.__ComboBox_01.get()]
 
@@ -110,3 +109,4 @@ if __name__ == "__main__":
     root = tk.Tk()
     app = App(root)
     root.mainloop()
+

@@ -56,7 +56,7 @@ class App:
             self.__df = self.__df.dropna()
             self.__ComboBox_01['values'] = list(self.__df['COMMUNITY AREA'
                                                           ' NAME'].unique())
-        except: #Exeption to E722 when printing out
+        except filePath.DoesNotExist:
             tkBox.showinfo('This is an ugly Error!',
                            'Not that one, choose another')
 
@@ -102,7 +102,7 @@ class App:
         self.__subdf.iloc[:, range(kwhJanIdx,
                                    kwhJanIdx+12)].max().plot.bar(ax=ax1)
         ax1.set_title('THERM max')
-
+        
 # %% Run
 
 
