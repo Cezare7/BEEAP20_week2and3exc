@@ -36,7 +36,7 @@ class App:
         self.__ComboBox_01 = ttk.Combobox(root)
         self.__ComboBox_01.set("Select community")
         self.__ComboBox_01.place(x=350, y=50, width=120, height=25)
-        self.__ComboBox_01.bind("<<ComboboxSelected>>", self.testing)
+        self.__ComboBox_01.bind("<<ComboboxSelected>>", self.Plot)
 
         self.__Lable_01 = tk.Label(root)
         ft = tkFont.Font(family='Times', size=11)
@@ -62,7 +62,7 @@ class App:
 
 # %% Combobox
 
-    def testing(self, event=None):
+    def Plot(self, event=None):
         self.__subdf = self.__df.loc[self.__df['COMMUNITY AREA NAME'
                                                ''] == self.__ComboBox_01.get()]
 
