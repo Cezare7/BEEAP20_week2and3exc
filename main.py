@@ -8,12 +8,9 @@ import tkinter.font as tkFont
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
 
-
 # %% Class App
 class App:
 
-
-# %% Initialize
     def __init__(self, root):
 
         root.title("Energy Usage 2010")
@@ -47,19 +44,6 @@ class App:
         self.__Lable_01["justify"] = "center"
         self.__Lable_01["text"] = "Please select a community:"
         self.__Lable_01.place(x=170, y=50, width=170, height=25)
-
-        # these canvases are broken, fix them
-        self.__GLineEdit_517 = tk.Canvas(root)
-        self.__GLineEdit_517.place(x=50, y=130, width=250, height=155)
-
-        self.__GLineEdit_985 = tk.Canvas(root)
-        self.__GLineEdit_985.place(x=310, y=130, width=250, height=155)
-
-        self.__GLineEdit_392 = tk.Canvas(root)
-        self.__GLineEdit_392.place(x=50, y=295, width=250, height=155)
-
-        self.__GLineEdit_700 = tk.Canvas(root)
-        self.__GLineEdit_700.place(x=310, y=295, width=250, height=155)
 
 # %%  Button command
 
@@ -96,8 +80,8 @@ class App:
         bar1.get_tk_widget().place(x=310, y=130, width=250, height=155)
         kwhJanIdx = (self.__subdf.columns.get_loc('THERM JANUARY 2010'))
         print(kwhJanIdx)
-        df1 = self.__subdf.iloc[:, range(kwhJanIdx,
-                                         kwhJanIdx+12)].mean().plot.bar(ax=ax1)
+        self.__subdf.iloc[:, range(kwhJanIdx,
+                                   kwhJanIdx+12)].mean().plot.bar(ax=ax1)
         ax1.set_title('THERM mean')
 
         figure1 = plt.figure(dpi=50)
@@ -105,9 +89,8 @@ class App:
         bar1 = FigureCanvasTkAgg(figure1, root)
         bar1.get_tk_widget().place(x=50, y=295, width=250, height=155)
         kwhJanIdx = (self.__subdf.columns.get_loc('KWH JANUARY 2010'))
-        print(kwhJanIdx)
-        df1 = self.__subdf.iloc[:, range(kwhJanIdx,
-                                         kwhJanIdx+12)].max().plot.bar(ax=ax1)
+        self.__subdf.iloc[:, range(kwhJanIdx,
+                                   kwhJanIdx+12)].max().plot.bar(ax=ax1)
         ax1.set_title('KWH max')
 
         figure1 = plt.figure(dpi=50)
@@ -115,9 +98,8 @@ class App:
         bar1 = FigureCanvasTkAgg(figure1, root)
         bar1.get_tk_widget().place(x=310, y=295, width=250, height=155)
         kwhJanIdx = (self.__subdf.columns.get_loc('THERM JANUARY 2010'))
-        print(kwhJanIdx)
-        df1 = self.__subdf.iloc[:, range(kwhJanIdx,
-                                         kwhJanIdx+12)].max().plot.bar(ax=ax1)
+        self.__subdf.iloc[:, range(kwhJanIdx,
+                                   kwhJanIdx+12)].max().plot.bar(ax=ax1)
         ax1.set_title('THERM max')
 
 # %% Run
